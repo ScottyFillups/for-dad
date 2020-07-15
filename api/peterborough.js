@@ -16,7 +16,7 @@ module.exports = (req, res) => {
       method: 'GET',
       responseType: 'stream'
     }).then(r => {
-      res.header('content-type', 'image/png')
+      res.setHeader('content-type', ['image/png'])
       r.data.pipe(res)
     })
   })
